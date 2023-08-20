@@ -45,11 +45,11 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "7311545919324236e79df3eeb9c1d7d6";
-let apiUrl =
-  "https://api.openweathermap.org/data/2.5/weather?q=Polokwane&appid=7311545919324236e79df3eeb9c1d7d6&units=metric";
-
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+  let apiKey = "cabdbda40038ba7d1165b953b1c7bd6c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
 function handleSubmit(event) {
   event.preventDefault();
